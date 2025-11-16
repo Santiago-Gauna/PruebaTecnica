@@ -17,7 +17,8 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - MONGO_URI=mongodb://mongo:27017/mi_basedatos
+      PORT: 3000
+      MONGO_URI: mongodb://mongo:27017/mi_basedatos
     depends_on:
       - mongo
 

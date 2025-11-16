@@ -67,7 +67,7 @@ const ListadeTareas = () => {
               {taskPendientes.length > 0 ? (
                 taskPendientes.map((item) => (
                   <div
-                    key={item.id}
+                    key={item._id}
                     className="flex justify-center items-center bg-[#eaf4fc] border border-[#cce0f5] w-full rounded p-3 text-lg text-gray-800 transition duration-200 ease-in-out hover:bg-[#d8eafd] cursor pointer"
                     onClick={() => handleTaskClick(item)}
                   >
