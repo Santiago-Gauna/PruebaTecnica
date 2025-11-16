@@ -49,22 +49,22 @@ const TareasPendientes = () => {
     }
   };
   return (
-    <div className={classes.container}>
-      <div className={classes.card}>
-        <h1 className={classes.title}>Pendientes</h1>
-        <div className={classes.taskList}>
+    <div className="w-full lg:w-1/3 bg-gray-50 rounded-xl shadow-lg p-4 sm:p-6 md:p-8">
+      <div className="flex flex-col bg-white rounded-lg shadow-md p-4 transition-all duration-200 ease-in-out hover:translate-y-[-5px] hover:shadow-xl">
+        <h1 className="text-2xl font-semibold text-[#334e68] [text-shadow:2px_2px_4px_rgba(0,0,0,0.3)] mb-3 text-center">Pendientes</h1>
+        <div className="flex flex-col gap-2">
           {taskPendientes.length > 0 ? (
             taskPendientes.map((item) => (
               <div
                 key={item.id}
-                className={classes.tarea}
+                className="flex justify-center items-center bg-[#eaf4fc] border border-[#cce0f5] w-full rounded-lg p-3 text-lg text-gray-700 cursor-pointer transition-colors duration-200 hover:bg-[#d8eafd]"
                 onClick={() => handleTaskClick(item)}
               >
                 <span>{item.title}</span>
               </div>
             ))
           ) : (
-            <p>No hay tareas pendientes.</p>
+            <p className="text-center text-gray-500 italic mt-2">No hay tareas pendientes.</p>
           )}
         </div>
       </div>

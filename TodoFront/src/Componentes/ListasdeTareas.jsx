@@ -3,7 +3,6 @@ import Title from "./Title";
 import NavTodoList from "./NavTodoList";
 import TareasModal from "../Modales/TareasModal";
 import { axiosGet, axiosPut, axiosDelete } from "../Api/axios";
-import classes from "../Estilos/ListasdeTareas.module.css";
 
 const ListadeTareas = () => {
   const [selectedTask, setSelectedTask] = useState(null);
@@ -60,68 +59,65 @@ const ListadeTareas = () => {
     <div>
       <Title />
       <NavTodoList />
-      <div className={classes.taskContainer}>
-        {/* Tareas Pendientes */}
-        <div className={classes.container}>
-          <div className={classes.card}>
-            <h1>Pendientes</h1>
-            <div>
+      <div className="flex flex-col md:flex-row justify-between gap-4 w-full p-4 box-border">
+        <div className="w-full md:w-1/3 bg-gray-50 rounded-lg shadow-sm p-4 box-border">
+          <div className="flex flex-col bg-white rounded-lg shadow-md p-4 transition duration-200 ease-in-out hover:transform hover:-translate-y-1 hover:shadow-lg">
+            <h1 className="text-xl font.semibold text-[#334e68] [text-shadow:2px_2px_4px_rgba(0,0,0,0.3)] mb-2 text-center">Pendientes</h1>
+            <div className="flex flex-col gap-2">
               {taskPendientes.length > 0 ? (
                 taskPendientes.map((item) => (
                   <div
                     key={item.id}
-                    className={classes.tarea}
+                    className="flex justify-center items-center bg-[#eaf4fc] border border-[#cce0f5] w-full rounded p-3 text-lg text-gray-800 transition duration-200 ease-in-out hover:bg-[#d8eafd] cursor pointer"
                     onClick={() => handleTaskClick(item)}
                   >
                     <span>{item.title}</span>
                   </div>
                 ))
               ) : (
-                <p>No hay tareas pendientes.</p>
+                <p className="text-gray-500 text-center mt-2">No hay tareas pendientes.</p>
               )}
             </div>
           </div>
         </div>
 
-        {/* Tareas en Proceso */}
-        <div className={classes.container}>
-          <div className={classes.card}>
-            <h1>En Proceso</h1>
-            <div>
+        <div className="w-full md:w-1/3 bg-gray-50 rounded-lg shadow-sm p-4 box-border">
+          <div className="flex flex-col bg-white rounded-lg shadow-md p-4 transition duration-200 ease-in-out hover:transform hover:-translate-y-1 hover:shadow-lg">
+            <h1 className="text-xl font.semibold text-[#334e68] [text-shadow:2px_2px_4px_rgba(0,0,0,0.3)] mb-2 text-center">En Proceso</h1>
+            <div className="flex flex-col gap-2">
               {taskEnProceso.length > 0 ? (
                 taskEnProceso.map((item) => (
                   <div
                     key={item._id}
-                    className={classes.tarea}
+                    className="flex justify-center items-center bg-[#eaf4fc] border border-[#cce0f5] w-full rounded p-3 text-lg text-gray-800 transition duration-200 ease-in-out hover:bg-[#d8eafd] cursor pointer"
                     onClick={() => handleTaskClick(item)}
                   >
                     <span>{item.title}</span>
                   </div>
                 ))
               ) : (
-                <p>No hay tareas en proceso.</p>
+                <p className="text-gray-500 text-center mt-2">No hay tareas en proceso.</p>
               )}
             </div>
           </div>
         </div>
 
-        {/* Tareas Completadas */}
-        <div className={classes.container}>
-          <div className={classes.card}>
-            <h1>Completadas</h1>
-            <div>
+        <div className="w-full md:w-1/3 bg-gray-50 rounded-lg shadow-sm p-4 box-border">
+          <div className="flex flex-col bg-white rounded-lg shadow-md p-4 transition duration-200 ease-in-out hover:transform hover:-translate-y-1 hover:shadow-lg">
+            <h1 className="text-xl font.semibold text-[#334e68] [text-shadow:2px_2px_4px_rgba(0,0,0,0.3)] mb-2 text-center">Completadas</h1>
+            <div className="flex flex-col gap-2">
               {taskCompletadas.length > 0 ? (
                 taskCompletadas.map((item) => (
                   <div
                     key={item._id}
-                    className={classes.tarea}
+                    className="flex justify-center items-center bg-[#eaf4fc] border border-[#cce0f5] w-full rounded p-3 text-lg text-gray-800 transition duration-200 ease-in-out hover:bg-[#d8eafd] cursor pointer"
                     onClick={() => handleTaskClick(item)}
                   >
                     <span>{item.title}</span>
                   </div>
                 ))
               ) : (
-                <p>No hay tareas completadas.</p>
+                <p className="text-gray-500 text-center mt-2">No hay tareas completadas.</p>
               )}
             </div>
           </div>

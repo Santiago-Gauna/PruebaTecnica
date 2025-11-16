@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import classes from "../Estilos/TareasModal.module.css";
 
 const TareasModal = ({ tarea, onClose, removeTask, onEdit }) => {
   const [editData, setEditData] = useState({ ...tarea });
@@ -33,38 +32,38 @@ const TareasModal = ({ tarea, onClose, removeTask, onEdit }) => {
   };
 
   return (
-    <div className={classes.modalOverlay}>
-      <div className={classes.modalContent}>
-        <h2 className={classes.title}>Detalles de Tarea</h2>
-        <label className={classes.inputLabel}>
+    <div className="fixed inset-0 bg-opacity-20 flex justify-center items-center z-50 backdrop-blur-md">
+      <div className="bg-white rounded-lg p-5 w-11/12 max-w-sm shadow-xl text-center">
+        <h2 className="text-2xl font-semibold mb-5 text-gray-800">Detalles de Tarea</h2>
+        <label className="flex flex-col mb-4 text-left text-sm text-gray-600">
           Título:
           <input
             type="text"
             name="title"
             value={editData.title}
             onChange={handleChange}
-            className={classes.input}
+            className="p-2 mt-1 text-base border border-gray-300 rounded-md outline-none transition duration-200 focus:border-blue-500 disabled:bg-gray-100 disabled:cursor-not-allowed "
             disabled={!isEditing}
           />
         </label>
-        <label className={classes.inputLabel}>
+        <label className="flex flex-col mb-4 text-left text-sm text-gray-600">
           Descripción:
           <textarea
             name="description"
             value={editData.description || ""}
             onChange={handleChange}
-            className={classes.input}
+            className="p-2 mt-1 text-base border border-gray-300 rounded-md outline-none transition duration-200 focus:border-blue-500 resize-none h-20 disabled:bg-gray-100 disabled:cursor-not-allowed"
             disabled={!isEditing}
           />
         </label>
 
-        <label className={classes.inputLabel}>
+        <label className="flex flex-col mb-6 text-left text-sm text-gray-600">
           Estado:
           <select
             name="status"
             value={editData.status}
             onChange={handleStatusChange}
-            className={classes.input}
+            className="p-2 mt-1 text-base border border-gray-300 rounded-md outline-none transition duration-200 focus:border-blue-500 disabled:bg-gray-100 disabled:cursor-not-allowed"
             disabled={!isEditing}
           >
             <option value="pendientes">Pendiente</option>
@@ -73,13 +72,13 @@ const TareasModal = ({ tarea, onClose, removeTask, onEdit }) => {
           </select>
         </label>
 
-        <div className={classes.AccionesForm}>
+        <div className="flex justify-between gap-3">
           {!isEditing ? (
-            <button onClick={toggleEditMode} className={classes.button}>
+            <button onClick={toggleEditMode} className="flex-1 p-2 bg-blue-500 text-white rounded-md text-sm cursor-pointer transition duration-200 hover:bg-blue-700">
               Editar
             </button>
           ) : (
-            <button onClick={handleEdit} className={classes.button}>
+            <button onClick={handleEdit} className="flex-1 p-2 bg-blue-500 text-white rounded-md text-sm cursor-pointer transition duration-200 hover:bg-blue-700">
               Guardar
             </button>
           )}
@@ -88,11 +87,11 @@ const TareasModal = ({ tarea, onClose, removeTask, onEdit }) => {
               handleRemoveTask(tarea._id);
               onClose();
             }}
-            className={classes.button}
+            className="flex-1 p-2 bg-red-600 text-white rounded-md text-sm cursor-pointer transition duration-200 hover:bg-red-800"
           >
             Eliminar
           </button>
-          <button onClick={onClose} className={classes.closeButton}>
+          <button onClick={onClose} className="flex-1 p-2 bg-gray-400 text-white rounded-md text-sm cursor-pointer transition duration-200 hover:bg-gray-600">
             Cerrar
           </button>
         </div>
