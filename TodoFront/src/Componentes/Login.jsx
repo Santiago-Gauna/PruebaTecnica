@@ -58,8 +58,7 @@ const Login = () => {
             Correo Electrónico
           </label>
           <input
-            className="m-[0.5rem] p-3 border border-[#ccc] rounded-md  text-sm box-border focus:border-[#4b90e2] focus:outline-none 
-                       sm:text-sm sm:p-2.5 xs:text-xs xs:p-2"
+            className="m-[0.5rem] p-3 border border-[#ccc] rounded-md  text-sm box-border focus:border-[#4b90e2] focus:outline-none sm:text-sm sm:p-2.5 xs:text-xs xs:p-2"
             type="email"
             value={mail}
             onChange={(evt) => setMail(evt.target.value)}
@@ -73,8 +72,7 @@ const Login = () => {
             Contraseña
           </label>
           <input
-            className="m-[0.5rem] p-3 border border-[#ccc] rounded-md  text-sm box-border focus:border-[#4b90e2] focus:outline-none
-                        sm:p-2.5 xs:text-xs xs:p-2"
+            className="m-[0.5rem] p-3 border border-[#ccc] rounded-md  text-sm box-border focus:border-[#4b90e2] focus:outline-none sm:p-2.5 xs:text-xs xs:p-2"
             type="password"
             value={contraseña}
             onChange={(evt) => setContraseña(evt.target.value)}
