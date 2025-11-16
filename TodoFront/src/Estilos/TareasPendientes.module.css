@@ -1,0 +1,65 @@
+/* Contenedor principal que ocupa 1/3 del ancho de la pantalla */
+.container {
+  width: 33.33%; /* 1/3 del ancho */
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  padding: 1rem;
+}
+
+/* Estilos para cada tarjeta de tarea */
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  padding: 1rem;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Efecto al pasar el mouse */
+}
+
+/* Estilos para el encabezado */
+.card h1 {
+  font-size: 1.5rem;
+  color: #334e68; /* Color sutil para el texto */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra para las letras */
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+/* Estilos para las tareas individuales */
+.card div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.card div .tarea {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  background-color: #eaf4fc; /* Color sutil para cada tarea */
+  border: 1px solid #cce0f5; /* Borde sutil */
+  width: 100%;
+  border-radius: 5px;
+  padding: 0.75rem;
+  font-size: 1.2rem;
+  color: #333;
+  transition: background-color 0.2s ease-in-out;
+}
+.card div .tarea:hover {
+  background-color: #d8eafd; /* Color más intenso al pasar el mouse */
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .container {
+    width: 100%; /* Ocupa todo el ancho en pantallas más pequeñas */
+    padding: 0.5rem;
+  }
+}
